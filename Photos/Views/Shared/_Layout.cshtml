@@ -3,42 +3,53 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Photos</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="~/Scripts/Maps.js"></script>
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <div id="sidebar" class="overlay">
+        <ul class="nav">
+            <li>
+                <a href="@Url.Action("Index", "Home")">
+                    <i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home
+                </a>
+
+            </li>
+            <li>
+                <a href="@Url.Action("About", "Home")">
+                    <i class="fa fa-question-circle  fa-fw" aria-hidden="true"></i>&nbsp; About
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Contact", "Home")">
+                    <i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>&nbsp&nbsp;Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="topMenu" class="navbar navbar-fixed-top">
+        <div class="navbar-collapse collapse">
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+       <div  id="BodyContent" class="container body-content">
+            @RenderBody()
+        </div>
+ 
+    <div id="bottomMenu" class="navbar navbar-fixed-bottom">
+        <div class="navbar-collapse collapse">
+            <h5 class="text-center">  &copy; @DateTime.Now.Year - Photos</h5>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/NavigationBar.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

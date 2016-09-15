@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Photo.Models.Categories>
+
+<table class="table table-fixed table-hover">
+    <tr>
+        <th class="col-sm-3 text-left">
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th class="col-sm-4 text-left"></th="col-sm-3>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-sm-4 text-left">
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td class="col-sm-6 text-left">
+                @Ajax.ActionLink("Edit", "_Edit", "Categories",
+                                new { id = item.CatagoryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Edit Category','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                @Ajax.ActionLink("Details", "_Details", "Categories",
+                                new { id = item.CatagoryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Details of Category','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                @Ajax.ActionLink("Delete", "_Delete", "Categories",
+                                new { id = item.CatagoryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Delete Category','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+            </td>
+        </tr>
+    }
+
+</table>

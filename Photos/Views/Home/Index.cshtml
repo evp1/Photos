@@ -1,31 +1,251 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewData["Title"] = "Home Page";
 }
+<header>
+    <link href="~/Content/bootswatch/superhero/bootstrap.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/Panals.css" rel="stylesheet" />
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+</header>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<!--Search for photos-->
+<div style="margin-left:20px">
+    <div class="row">
+        <div>
+            <h2 class="page-header text-center">Find Photos</h2>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="row">
+        <!--Search for photos by country-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-globe fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+
+                            <div>Search By Country</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Index", "Pictures")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Search</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--Search for photos by Place-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-home fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+
+                            <div>Search By Place</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Index", "Pictures")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Search</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--Search for photos by Category-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tags fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+
+                            <div>Search By Catecory</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Index", "Pictures")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Search</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--Search for photos by description-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comment-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+
+                            <div>Search By Description</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Index", "Pictures")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Search</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <!--Add Photos-->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header text-center">Add Photos</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Add One photo at the time-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-pink">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-picture-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Add One Photo at the Time</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Add Photo</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--Add all photos in a folder-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-opal">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-folder-open fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Add All Photos in a Folder</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Add Folder</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Updates-->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header text-center">Edit Tags</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Update Countries-->
+       <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-globe fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Edit Countries</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("_LayoutCountries", "Countries")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Edit</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Update Places-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-home fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Edit Places</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("_LayoutPlaces", "Places")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Edit</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--Update Categories-->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tags fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+
+                            <div>Edit Catecories</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("_LayoutCategories", "Categories")">
+                    <div class="panel-footer">
+                        <span class="pull-left">Edit</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

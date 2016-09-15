@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Categories";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/ChangeElelment.js"></script>
+</head>
+
+    <div style="margin-left:10px">
+        <div class="row">
+            <h2 class="page-header text-center">Categories</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-sm-14">
+                    <div class="row">
+                        <div class="panel panel-default" style="height:  350px">
+                            <div class="panel-heading">
+                                @Ajax.ActionLink("Create New", "_Create", "Categories",
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Add a New Category','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary" }
+                                )
+
+                            </div>
+                            <div id="PlaceHolderIndexTable" class="panel-body">
+                                @Html.Action("_IndexTable", "Categories")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default" style="height:  400px">
+                            <div id="editPanalHeader" class="panel-heading text-center">
+                                Edit Area
+                            </div>
+                            <div id="PlaceHolderEdit" class="panel-body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

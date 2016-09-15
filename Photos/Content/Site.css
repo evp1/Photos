@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 
@@ -21,4 +21,110 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.form-control {
+    height: 25px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    font-size: 15px;
+}
+
+/*@media all and (min-width:768px)*/
+.form-horizontal .control-label {
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+
+#BodyContent {
+    margin: 0 0 0 50px;
+}
+
+#bottomMenu {
+    background: #2a2c36;
+    color: #eee;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.btn-primary {
+    border-radius: 5px;
+}
+
+#topMenu {
+    background: #2a2c36;
+    color: #eee;
+    margin: 0;
+}
+
+#sidebar {
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 50px;
+    overflow: hidden;
+    float: right;
+    left: 0;
+    margin: 0;
+    transition: 0.5s;
+}
+
+    #sidebar.open-sidebar {
+        width: 150px;
+        z-index: 1;
+        box-shadow: 30px 0 30px #000000;
+        transition: 0.5s;
+    }
+
+.nav {
+    font-size: 22px;
+}
+
+    .nav li {
+        list-style-type: none;
+        width: 200px;
+    }
+
+.active {
+    font-weight: bold;
+}
+
+.table-fixed thead {
+    width: 97%;
+    float: left;
+    border-bottom-width: 1px;
+}
+
+.table-fixed tbody {
+    height: 250px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+    display: block;
+}
+
+    .table-fixed tbody td, tr > th {
+        float: left;
+        border-bottom-width: 0;
+    }
+
+#mapDiv {
+    width: 550px;
+    height: 750px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.page-header {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.panal {
+    margin-left: 10px;
+    margin-top: 10px;
 }

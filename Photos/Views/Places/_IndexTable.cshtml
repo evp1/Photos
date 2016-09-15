@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Photo.Models.Places>
+
+<table class="table table-fixed table-hover">
+    <thead>
+        <tr>
+            <th class="col-sm-3 text-left">
+                @Html.DisplayNameFor(model => model.Placename)
+            </th>
+            <th class="col-sm-3 text-left">
+                @Html.DisplayNameFor(model => model.Countries.Country)
+            </th>
+            <th class="col-sm-4 text-left"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-sm-3 text-left">
+                    @Html.DisplayFor(modelItem => item.Placename)
+                </td>
+                <td class="col-sm-3 text-left">
+                    @Html.DisplayFor(modelItem => item.Countries.Country)
+                </td>
+                <td class="col-sm-4 text-left">
+                    @Ajax.ActionLink("Edit", "_Edit", "Places",
+                                new { id = item.PlaceId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Edit Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    @Ajax.ActionLink("Details", "_Details", "Places",
+                                new { id = item.PlaceId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Details of Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    @Ajax.ActionLink("Delete", "_Delete", "Places",
+                                new { id = item.PlaceId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Delete Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+               </td>
+            </tr>
+        }
+    <tbody>
+</table>
+

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Photo.Models.Countries>
+
+<table class="table table-condensed table-fixed table-hover">
+    <thead>
+        <tr>
+            <th class="col-sm-3 text-left">
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th class="col-sm-4 text-left"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-sm-6 text-left">
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td class="col-sm-6 text-left">
+                    <div class="btn-group">
+                    @Ajax.ActionLink("Edit", "_Edit", "Countries",
+                                new { id = item.CountryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Edit Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    @Ajax.ActionLink("Details", "_Details", "Countries",
+                                new { id = item.CountryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Details of Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    @Ajax.ActionLink("Delete", "_Delete", "Countries",
+                                new { id = item.CountryId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Delete Place','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    </div>
+                </td>
+            </tr>
+        }
+    <tbody>
+</table>
+
+
