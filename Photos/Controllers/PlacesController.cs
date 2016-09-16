@@ -18,6 +18,13 @@ namespace Photo.Controllers
             return PartialView( places.ToList().OrderBy(x => x.Placename));
         }
 
+        public ActionResult GetLocations()
+        {
+            var Locations = from l in db.Places
+                             select new { Latitude = l.Latitude, longitude = l.Longitude };
+            return View(Locations);
+        }
+
         public ActionResult _LayoutPlaces()
         {
             return View();

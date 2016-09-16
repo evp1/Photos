@@ -1,0 +1,136 @@
+﻿body {
+    @colorText: #fff;
+    @colorGreen: #3b9a3b;
+    @colorRed: #d9534f;
+    @colorYellow: #f0ad4e;
+    @colerBlue: #356bcb;
+    @colorPink: #d369c4;
+    @colorOpal: #6f949d;
+
+    .panel {
+        box-shadow: 20px 20px 20px #000000;
+        border-radius: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+
+        .panel-footer {
+            border-radius: 0px 0px 20px 20px;
+        }
+
+        .panel-heading {
+            border-radius: 20px 20px 0px 0px;
+        }
+    }
+
+    .panel-green {
+        border-color: @colorGreen;
+
+        .panel-heading {
+            border-color: @colorGreen;
+            color: @colorText;
+            background-color: @colorGreen;
+
+            .a {
+                color: @colorGreen;
+
+                &hover {
+                    color: @colorGreen;
+                }
+            }
+        }
+    }
+
+    .panel-red {
+        border-color: @colorRed;
+
+        .panel-heading {
+            border-color: @colorRed;
+            color: @colorText;
+            background-color: @colorRed;
+
+            .a {
+                color: @colorRed;
+
+                &hover {
+                    color: @colorRed;
+                }
+            }
+        }
+    }
+
+    .panel-yellow {
+        border-color: @colorYellow;
+
+        .panel-heading {
+            border-color: @colorYellow;
+            color: @colorText;
+            background-color: @colorYellow;
+
+            .a {
+                color: @colorYellow;
+
+                &hover {
+                    color: @colorYellow;
+                }
+            }
+        }
+    }
+
+    .panel-blue {
+        border-color: @colerBlue;
+
+        .panel {
+            border-radius: 20px;
+        }
+
+        .panel-heading {
+            border-color: @colerBlue;
+            color: @colorText;
+            background-color: @colerBlue;
+
+            .a {
+                color: @colerBlue;
+
+                &hover {
+                    color: @colerBlue;
+                }
+            }
+        }
+    }
+
+    .panel-pink {
+        border-color: @colorPink;
+
+        .panel-heading {
+            border-color: @colorPink;
+            color: @colorText;
+            background-color: @colorPink;
+
+            .a {
+                color: @colorPink;
+
+                &hover {
+                    color: @colorPink;
+                }
+            }
+        }
+    }
+
+    .panel-opal {
+        border-color: @colorOpal;
+
+        .panel-heading {
+            border-color: @colorOpal;
+            color: @colorText;
+            background-color: @colorOpal;
+
+            .a {
+                color: @colorOpal;
+
+                &hover {
+                    color: @colorOpal;
+                }
+            }
+        }
+    }
+}

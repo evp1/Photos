@@ -23,7 +23,8 @@
                     @Html.DisplayFor(modelItem => item.Countries.Country)
                 </td>
                 <td class="col-sm-4 text-left">
-                    @Ajax.ActionLink("Edit", "_Edit", "Places",
+                    <div class="btn-group">
+                        @Ajax.ActionLink("Edit", "_Edit", "Places",
                                 new { id = item.PlaceId },
                                 new AjaxOptions
                                 {
@@ -32,7 +33,7 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-                    @Ajax.ActionLink("Details", "_Details", "Places",
+                        @Ajax.ActionLink("Details", "_Details", "Places",
                                 new { id = item.PlaceId },
                                 new AjaxOptions
                                 {
@@ -41,7 +42,7 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-                    @Ajax.ActionLink("Delete", "_Delete", "Places",
+                        @Ajax.ActionLink("Delete", "_Delete", "Places",
                                 new { id = item.PlaceId },
                                 new AjaxOptions
                                 {
@@ -50,7 +51,8 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-               </td>
+                        </div>
+</td>
             </tr>
         }
     <tbody>

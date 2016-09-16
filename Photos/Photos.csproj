@@ -48,6 +48,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="dotless.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotless.1.5.2\lib\dotless.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
       <Private>True</Private>
@@ -252,46 +256,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.superhero.css" />
     <Content Include="Content\bootstrap.superhero.min.css" />
-    <Content Include="Content\bootswatch\cerulean\bootstrap.css" />
-    <Content Include="Content\bootswatch\cerulean\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\cosmo\bootstrap.css" />
-    <Content Include="Content\bootswatch\cosmo\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\cyborg\bootstrap.css" />
-    <Content Include="Content\bootswatch\cyborg\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\darkly\bootstrap.css" />
-    <Content Include="Content\bootswatch\darkly\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\flatly\bootstrap.css" />
-    <Content Include="Content\bootswatch\flatly\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\journal\bootstrap.css" />
-    <Content Include="Content\bootswatch\journal\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\lumen\bootstrap.css" />
-    <Content Include="Content\bootswatch\lumen\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\paper\bootstrap.css" />
-    <Content Include="Content\bootswatch\paper\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\readable\bootstrap.css" />
-    <Content Include="Content\bootswatch\readable\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\sandstone\bootstrap.css" />
-    <Content Include="Content\bootswatch\sandstone\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\simplex\bootstrap.css" />
-    <Content Include="Content\bootswatch\simplex\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\slate\bootstrap.css" />
-    <Content Include="Content\bootswatch\slate\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\spacelab\bootstrap.css" />
-    <Content Include="Content\bootswatch\spacelab\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\superhero\bootstrap.css" />
-    <Content Include="Content\bootswatch\superhero\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\united\bootstrap.css" />
-    <Content Include="Content\bootswatch\united\bootstrap.min.css" />
-    <Content Include="Content\bootswatch\yeti\bootstrap.css" />
-    <Content Include="Content\bootswatch\yeti\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Panals.css" />
+    <Content Include="CSS\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Images\Map-Marker-Push-Pin-2-Left-Chartreuse-icon.png" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -310,9 +282,10 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="CSS\Panals.less" />
+    <Content Include="CSS\Table.less" />
+    <Content Include="CSS\Main.less" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
@@ -395,7 +368,7 @@
     <Content Include="Views\Places\_LayoutPlaces.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Content\bootswatch\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

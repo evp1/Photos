@@ -15,7 +15,8 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td class="col-sm-6 text-left">
-                @Ajax.ActionLink("Edit", "_Edit", "Categories",
+                <div class="btn-group">
+                    @Ajax.ActionLink("Edit", "_Edit", "Categories",
                                 new { id = item.CatagoryId },
                                 new AjaxOptions
                                 {
@@ -24,7 +25,7 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-                @Ajax.ActionLink("Details", "_Details", "Categories",
+                    @Ajax.ActionLink("Details", "_Details", "Categories",
                                 new { id = item.CatagoryId },
                                 new AjaxOptions
                                 {
@@ -33,7 +34,7 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-                @Ajax.ActionLink("Delete", "_Delete", "Categories",
+                    @Ajax.ActionLink("Delete", "_Delete", "Categories",
                                 new { id = item.CatagoryId },
                                 new AjaxOptions
                                 {
@@ -42,7 +43,8 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-            </td>
+                    </div>
+</td>
         </tr>
     }
 
