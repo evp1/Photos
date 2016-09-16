@@ -1,5 +1,119 @@
 ﻿@import "Panals";
 @import "Table";
 
+@MenuColor: #2a2c36;
+@MenuTextColor: #eee;
+
 body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.form-control {
+    height: 25px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    font-size: 15px;
+}
+
+/*@media all and (min-width:768px)*/
+.form-horizontal .control-label {
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+
+#BodyContent {
+    margin: 0 0 0 50px;
+}
+
+.btn-xs {
+    border-radius: 10px;
+}
+
+.btn-md {
+    border-radius: 10px;
+}
+
+btn-primary{
+    border-radius: 10px;
+}
+
+#bottomMenu {
+    background: @MenuColor;
+    color: @MenuTextColor;
+    margin: 0;
+    padding-top: 10px;
+}
+
+
+#topMenu {
+    background: @MenuColor;
+    color: @MenuTextColor;
+    margin: 0;
+}
+
+#sidebar {
+    background: @MenuColor;
+    color: @MenuTextColor;
+    position: fixed;
+    height: 100%;
+    width: 50px;
+    overflow: hidden;
+    float: right;
+    left: 0;
+    margin: 0;
+    transition: 0.5s;
+}
+
+    #sidebar.open-sidebar {
+        width: 150px;
+        z-index: 1;
+        box-shadow: 30px 0 30px #000000;
+        transition: 0.5s;
+    }
+
+#mapDiv {
+    width: 550px;
+    height: 750px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.page-header {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.nav {
+    font-size: 22px;
+}
+
+    .nav li {
+        list-style-type: none;
+        width: 200px;
+    }
+
+.active {
+    font-weight: bold;
 }

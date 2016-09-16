@@ -26,7 +26,6 @@ namespace Photos
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap.superhero.css",
-                      "~/CSS/Site.css",
                       "~/CSS/Main.less",
                       "~/Content/font-awesome.min.css"));
         }
