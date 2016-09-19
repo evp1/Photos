@@ -1,23 +1,51 @@
 ﻿
 var map = null;
-var loc = null;
 
 function GetMap() {
-    map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), 
-        { credentials: "AryzS-OoHizuNhXuWNXAExZuvxCtUpcCwpm6Kq21r3MBqJzLVDJJw_d60vtsTg47", 
-         zoom: 9 });
 
-    pinPlaces;
+    map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),
+        {
+            credentials: "AryzS-OoHizuNhXuWNXAExZuvxCtUpcCwpm6Kq21r3MBqJzLVDJJw_d60vtsTg47",
+            zoom: 9
+        });
+
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        cache: false,
+        url: "/Places/GetLocations",
+        data: {},
+        success: function (response) {
+            setPushPinslayer(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        }
+    });
+
     getCurrentLocation;
 
     Microsoft.Maps.Events.addHandler(map, 'click',  mapclick);
-    }
+}
 
-function pinPlaces() {
-    $.getJSON("/Places/GetLocations", function(result){
-        $.each(result.Items, function (index, item) {
-                                pushpin(item.Latitude, item.Longitude);
-        })});
+
+function setPushPinslayer(Places) {
+    var pins= [];
+    var loc;
+    var p = Places.Locations;
+
+    $.each(p, function (index, pin) {
+        loc = new Microsoft.Maps.Location(pin.Latitude, pin.Longitude);
+        pin = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
+        pin.customid = pin.PlaceId;
+        pins.push(pin);
+
+    });
+
+    Microsoft.Maps.loadModule("Microsoft.Maps.Clustering", function () {
+        var clusterLayer = new Microsoft.Maps.ClusterLayer(pins);
+        map.layers.insert(clusterLayer);
+        clusterLayer.setPushpins(pins);
+    });
 }
 
 function getCurrentLocation() {
@@ -50,11 +78,9 @@ function errCallback(request) {
 }
 
 function pushpin(Lat, Long) {
-    var pushpinOptions = { icon: '/images/Map-Marker-Push-Pin-2-Left-Chartreuse-icon.png', width: 48, height: 48 };
 
     var point = new Microsoft.Maps.Location(Lat, Long);
-    var pin = new Microsoft.Maps.Pushpin(point, pushpinOptions);
-    
+    var pin = new Microsoft.Maps.Pushpin(point, { color: 'red' });
 
     //Add the pushpin to the map
     map.entities.push(pin);

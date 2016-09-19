@@ -7,7 +7,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/Maps.js"></script>
-    <link href="~/CSS/StyleSheet1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -35,7 +34,8 @@
         <div class="navbar-collapse collapse">
             @Html.Partial("_LoginPartial")
         </div>
-    </div>
+        <a href="#top"></a>
+        </div>
 
        <div  id="BodyContent" class="container body-content">
             @RenderBody()
