@@ -2,25 +2,14 @@
     ViewBag.Title = "Places";
 }
 
-<head>
-        @Scripts.Render("~/bundles/jquery")
-
-    <script type='text/javascript'
-            src='http://www.bing.com/api/maps/mapcontrol?branch=release&callback=GetMap'
-            async defer></script>
-    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-    <script src="~/Scripts/Maps.js"></script>
-    <script src="~/Scripts/ChangeElelment.js"></script>
-</head>
-
-<body onload="GetMap();">
+<div class="container-fluid">
     <div style="margin-left:10px">
         <div class="row">
             <h2 class="page-header text-center">Places</h2>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-12">
+                <div class="col-xs-6">
                     <div class="row">
                         <div class="panel panel-default" style="height:  360px">
                             <div class="panel-heading">
@@ -44,14 +33,22 @@
                             <div id="editPanalHeader" class="panel-heading text-center">
                                 Edit Area
                             </div>
-                            <div id="PlaceHolderEdit" class="panel-body"></div>
+                            <div id="PlaceHolderEdit" ></div>
                         </div>
                     </div>
                 </div>
                 <!--Map-->
-                <div id='mapDiv' class="col-lg-8 col-sm-16">
+                <div id="mapDiv" class="panel panel-default col-xs-6">
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type='text/javascript'
+        src='http://www.bing.com/api/maps/mapcontrol?branch=release&callback=GetMap'
+        async defer></script>
+<script src="~/Scripts/Maps.js"></script>
+<script src="~/Scripts/ChangeElelment.js"></script>
+<script> onload = "GetMap();"</script>

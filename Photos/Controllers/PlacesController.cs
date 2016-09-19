@@ -18,11 +18,12 @@ namespace Photo.Controllers
             return PartialView( places.ToList().OrderBy(x => x.Placename));
         }
 
+        [HttpGet]
         public ActionResult GetLocations()
         {
-            var Locations = from l in db.Places
-                             select new { Latitude = l.Latitude, longitude = l.Longitude };
-            return View(Locations);
+            var places = db.Places.Include(p => p.Countries);
+            return Json(new { success = true, Locations = places.ToList() },
+            JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult _LayoutPlaces()

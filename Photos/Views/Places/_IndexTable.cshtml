@@ -3,26 +3,26 @@
 <table class="table table-fixed table-hover">
     <thead>
         <tr>
-            <th class="col-sm-3 text-left">
+            <th class="col-sx-3 text-left">
                 @Html.DisplayNameFor(model => model.Placename)
             </th>
-            <th class="col-sm-3 text-left">
+            <th class="col-sx-3 text-left">
                 @Html.DisplayNameFor(model => model.Countries.Country)
             </th>
-            <th class="col-sm-4 text-left"></th>
+            <th class="col-sx-6 text-left"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td class="col-sm-3 text-left">
+                <td class="col-xs-3 text-left">
                     @Html.DisplayFor(modelItem => item.Placename)
                 </td>
-                <td class="col-sm-3 text-left">
+                <td class="col-xs-3 text-left">
                     @Html.DisplayFor(modelItem => item.Countries.Country)
                 </td>
-                <td class="col-sm-4 text-left">
+                <td class="col-xs-6 text-left">
                     <div class="btn-group">
                         @Ajax.ActionLink("Edit", "_Edit", "Places",
                                 new { id = item.PlaceId },
@@ -51,8 +51,8 @@
                                 },
                                 new { @class = "btn btn-primary btn-xs" }
                                 )
-                        </div>
-</td>
+                    </div>
+                </td>
             </tr>
         }
     <tbody>
