@@ -7,11 +7,6 @@ namespace Photo.Models
 {
     public class Places
     {
-        public Places()
-        {
-            DateCreated = DateTime.Now;
-        }
-
         [Key]
         public int PlaceId { get; set; }
         [Required]
@@ -20,11 +15,8 @@ namespace Photo.Models
         public string Placename { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        [DisplayName("Date Created")]
-        public DateTime DateCreated { get; set; }
         public int CountryId { get; set; }
         [DisplayName("Country")]
         public  Countries Countries { get; set; }
-
     }
 }

@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Photo";
+}
+
+<head>
+    <link href="~/CSS/PrieviewImage.css" rel="stylesheet" />
+    <script src="~/Scripts/ChangeElelment.js"></script>
+    <script src="~/Scripts/PreviewImages.js"></script>
+    @*  *@
+</head>
+
+<div class="container-fluid">
+    <div style="margin-left:10px">
+        <div class="row">
+            <h2 class="page-header text-center">Photos</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default" style="height:  450px">
+                        <div class="panel-heading">
+                            <p>Select a Photo</p>
+                            <input type="file" multiple id="uploadImages" onchange="PreviewImages(false);" />
+                        </div>
+                        <div id="photoPlaceHolder" class="panel-body" style="overflow-y: scroll; min-height: 350px; max-height: 350px; ">                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default" style="height:  250px">
+                        <div class="panel-heading">
+                            <p>Photo Description</p>
+                        </div>
+                        <div id="PlaceHolderEdit" class="panel-body">
+                            @Html.Action( "_Create", "Pictures" )
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

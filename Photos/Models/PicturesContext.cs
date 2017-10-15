@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace Photo.Models
 {
@@ -22,5 +18,7 @@ namespace Photo.Models
         public System.Data.Entity.DbSet<Photo.Models.Pictures> Pictures { get; set; }
 
         public System.Data.Entity.DbSet<Photo.Models.Places> Places { get; set; }
+        public System.Data.Entity.DbSet<Photo.Models.PictureCategories> PictureCategaories { get; set; }
+        public System.Data.Entity.DbSet<Photo.Models.Categories> Categories { get; set; }
     }
 }

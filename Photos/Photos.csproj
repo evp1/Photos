@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -258,6 +259,11 @@
     <Content Include="Content\bootstrap.superhero.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="CSS\loading.gif" />
+    <Content Include="CSS\nanogallery.css" />
+    <Content Include="CSS\nanogallery.woff.css" />
+    <Content Include="CSS\nano_logo.png" />
+    <Content Include="CSS\PrieviewImage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -292,6 +298,7 @@
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.nanogallery.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -305,6 +312,7 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\NavigationBar.js" />
+    <Content Include="Scripts\PreviewImages.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -356,20 +364,23 @@
     <Content Include="Views\Countries\_Edit.cshtml" />
     <Content Include="Views\Countries\_IndexTable.cshtml" />
     <Content Include="Views\Countries\_LayoutCountries.cshtml" />
-    <Content Include="Views\Pictures\Create.cshtml" />
+    <Content Include="Views\Pictures\_Create.cshtml" />
     <Content Include="Views\Pictures\Delete.cshtml" />
     <Content Include="Views\Pictures\Details.cshtml" />
     <Content Include="Views\Pictures\Edit.cshtml" />
-    <Content Include="Views\Pictures\Index.cshtml" />
+    <Content Include="Views\Pictures\_Index.cshtml" />
     <Content Include="Views\Places\_Create.cshtml" />
     <Content Include="Views\Places\_Delete.cshtml" />
     <Content Include="Views\Places\_Details.cshtml" />
     <Content Include="Views\Places\_Edit.cshtml" />
     <Content Include="Views\Places\_IndexTable.cshtml" />
     <Content Include="Views\Places\_LayoutPlaces.cshtml" />
+    <Content Include="Views\Pictures\_LayoutPictures.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\bootswatch\" />
+    <Folder Include="CSS\font\" />
+    <Folder Include="CSS\themes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -395,7 +406,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51970</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51970/</IISUrl>
+          <IISUrl>http://localhost:2000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

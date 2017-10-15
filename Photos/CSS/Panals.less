@@ -6,6 +6,7 @@
     @colerBlue: #356bcb;
     @colorPink: #d369c4;
     @colorOpal: #6f949d;
+    @colerSeagreen: #408f8f;
 
     .panel {
         box-shadow: 20px 20px 20px #000000;
@@ -18,10 +19,28 @@
         }
 
         .panel-body {
-            margin-left: 10;
+            margin-left: 10px;
         }
         .panel-heading {
             border-radius: 20px 20px 0px 0px;
+        }
+    }
+
+       .panel-Seagreen {
+        border-color: @colerSeagreen;
+
+        .panel-heading {
+            border-color: @colerSeagreen;
+            color: @colorText;
+            background-color: @colerSeagreen;
+
+            .a {
+                color: @colerSeagreen;
+
+                &hover {
+                    color: @colerSeagreen;
+                }
+            }
         }
     }
 
