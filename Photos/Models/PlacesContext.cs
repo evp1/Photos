@@ -8,7 +8,6 @@ namespace Photo.Models
         {
         }
         public DbSet<Places> Places { get; set; }
-
         public DbSet<Countries> Countries { get; set; }
     }
 }

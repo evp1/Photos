@@ -12,15 +12,9 @@ namespace Photo.Controllers
         private CategoriesContext db = new CategoriesContext();
 
         // GET: Categories
-        public ActionResult _IndexTable()
-        {
-            return PartialView( db.Categories.OrderBy(x => x.Category));
-        }
-    
-        public ActionResult _LayoutCategories()
-        {
-            return View();
-        }
+        public ActionResult _IndexTable() => PartialView( db.Categories.OrderBy( x => x.Category ) );
+
+        public ActionResult _LayoutCategories() => View();
 
         // GET: Categories/Details/5
         public async Task<ActionResult> _Details(int? id)
@@ -42,7 +36,6 @@ namespace Photo.Controllers
         {
             var model = new Categories();
             return PartialView(model);
-
         }
 
         // POST: Categories/Create
@@ -50,7 +43,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> _Create([Bind(Include = "CatagoryId,Category,DateCreated")] Categories categories)
+        public async Task<ActionResult> _Create([Bind(Include = "CatagoryId,Category")] Categories categories)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +52,7 @@ namespace Photo.Controllers
                 return RedirectToAction("_IndexTable");
             }
 
-            return View(categories);
+            return PartialView( categories);
         }
 
         // GET: Categories/Edit/5
@@ -82,7 +75,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> _Edit([Bind(Include = "CatagoryId,Category,DateCreated")] Categories categories)
+        public async Task<ActionResult> _Edit([Bind(Include = "CatagoryId,Category")] Categories categories)
         {
             if (ModelState.IsValid)
             {
