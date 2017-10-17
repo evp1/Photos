@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Photo.Models
 {
@@ -10,7 +7,7 @@ namespace Photo.Models
     {
         public Categories()
         {
-            DateCreated = DateTime.Now;
+            this.Pictures = new HashSet<Pictures>();
         }
 
         [Key]
@@ -18,8 +15,6 @@ namespace Photo.Models
         [Required]
         [MaxLength(25)]
         public string Category { get; set; }
-        [DisplayName("Date Created")]
-        public DateTime DateCreated { get; set; }
-        public virtual ICollection<PictureCategories> PictureCategories { get; set; }
+        public virtual ICollection<Pictures> Pictures { get; set; }
     }
 }

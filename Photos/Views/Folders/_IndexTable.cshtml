@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Photo.Models.Folders>
+
+<table class="table table-condensed table-fixed table-hover">
+    <thead>
+        <tr>
+            <th class="col-sm-3 text-left">
+                @Html.DisplayNameFor( model => model.FolderName )
+            </th>
+            <th class="col-sm-4 text-left"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td  class="col-sm-4 text-left">
+                    @Html.DisplayFor( modelItem => item.FolderName )
+                </td>
+                <td  class="col-sm-6 text-left">
+                    <div class="btn-group">
+                        @Ajax.ActionLink( "Edit", "_Edit", "Folders",
+                                new { id = item.FolderId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Edit Folders','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                        @Ajax.ActionLink( "Details", "_Details", "Folders",
+                                new { id = item.FolderId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Details of Folder','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                        @Ajax.ActionLink( "Delete", "_Delete", "Folders",
+                                new { id = item.FolderId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "PlaceHolderEdit",
+                                    OnSuccess = "changeElementText('Delete Folder','#editPanalHeader')"
+                                },
+                                new { @class = "btn btn-primary btn-xs" }
+                                )
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

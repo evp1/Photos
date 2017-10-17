@@ -18,20 +18,20 @@
 
     <div class="row">
         <!--Search for photos by country-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-globe fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-globe fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
 
-                            <div>Search By Country</div>
+                                <div>Search By Country</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("Index", "Pictures")">
                     <div class="panel-footer">
                         <span class="pull-left">Search</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -42,20 +42,20 @@
         </div>
 
         <!--Search for photos by Place-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-home fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-home fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
 
-                            <div>Search By Place</div>
+                                <div>Search By Place</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("Index", "Pictures")">
                     <div class="panel-footer">
                         <span class="pull-left">Search</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -66,20 +66,20 @@
         </div>
 
         <!--Search for photos by Category-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tags fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tags fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
 
-                            <div>Search By Catecory</div>
+                                <div>Search By Catecory</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("Index", "Pictures")">
                     <div class="panel-footer">
                         <span class="pull-left">Search</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -90,20 +90,20 @@
         </div>
 
         <!--Search for photos by description-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-blue">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-comment-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comment-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
 
-                            <div>Search By Description</div>
+                                <div>Search By Description</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("Index", "Pictures")">
                     <div class="panel-footer">
                         <span class="pull-left">Search</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -114,28 +114,28 @@
         </div>
     </div>
 
-    <!--Add Photos-->
+    <!--Add / Edit Photos-->
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header text-center">Add Photos</h2>
+            <h2 class="page-header text-center">Add / Edit Photos</h2>
         </div>
     </div>
 
     <div class="row">
-        <!--Add One photo at the time-->
-        <div class="col-lg-3 col-md-6">
+        <!--Add photos-->
+        <div class="col-sm-3">
             <div class="panel panel-pink">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-picture-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div>Add One Photo at the Time</div>
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-picture-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Add Photos</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("Create", "Pictures")">
                     <div class="panel-footer">
                         <span class="pull-left">Add Photo</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -145,28 +145,29 @@
             </div>
         </div>
 
-        <!--Add all photos in a folder-->
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-opal">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-folder-open fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div>Add All Photos in a Folder</div>
+        <!--Edit a photo tags-->
+        <div class="col-sm-3">
+            <div class="panel panel-Seagreen">
+                <a href="@Url.Action("_LayoutPictures", "Pictures")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-pencil-square-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Edit a photo description</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">Add Folder</span>
+                        <span class="pull-left">Edit Description</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
             </div>
         </div>
+
     </div>
 
     <!--Updates-->
@@ -178,19 +179,19 @@
 
     <div class="row">
         <!-- Update Countries-->
-       <div class="col-lg-3 col-md-6">
+       <div class="col-sm-3">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-globe fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div>Edit Countries</div>
+                <a href="@Url.Action("_LayoutCountries", "Countries")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-globe fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Edit Countries</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("_LayoutCountries", "Countries")">
                     <div class="panel-footer">
                         <span class="pull-left">Edit</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -201,19 +202,19 @@
         </div>
 
         <!-- Update Places-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-home fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div>Edit Places</div>
+                <a href="@Url.Action("_LayoutPlaces", "Places")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-home fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Edit Places</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("_LayoutPlaces", "Places")">
                     <div class="panel-footer">
                         <span class="pull-left">Edit</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -224,20 +225,20 @@
         </div>
 
         <!--Update Categories-->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-sm-3">
             <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tags fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                <a href="@Url.Action("_LayoutCategories", "Categories")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tags fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
 
-                            <div>Edit Catecories</div>
+                                <div>Edit Catecories</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="@Url.Action("_LayoutCategories", "Categories")">
                     <div class="panel-footer">
                         <span class="pull-left">Edit</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -246,5 +247,29 @@
                 </a>
             </div>
         </div>
+
+        <!--Add a subfolder name-->
+        <div class="col-sm-3">
+            <div class="panel panel-opal">
+                <a href="@Url.Action("_LayoutFolders", "Folders")">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-folder-open fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Edit Folder Names</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">Edit</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
     </div>
 </div>

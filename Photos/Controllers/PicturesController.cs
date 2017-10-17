@@ -17,6 +17,11 @@ namespace Photo.Controllers
             return View(await pictures.ToListAsync());
         }
 
+        public ActionResult _LayoutPictures()
+        {
+            return View();
+        }
+
         // GET: Pictures/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -33,10 +38,10 @@ namespace Photo.Controllers
         }
 
         // GET: Pictures/Create
-        public ActionResult Create()
+        public ActionResult _Create()
         {
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename");
-            return View();
+            return PartialView();
         }
 
         // POST: Pictures/Create
@@ -44,7 +49,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "PictureId,PhotoDescription,DateTaken,DateCreated,PlaceId")] Pictures pictures)
+        public async Task<ActionResult> _Create([Bind(Include = "PictureId,PhotoDescription,DateTaken,DateCreated,PlaceId")] Pictures pictures)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +59,7 @@ namespace Photo.Controllers
             }
 
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename", pictures.PlaceId);
-            return View(pictures);
+            return PartialView(pictures);
         }
 
         // GET: Pictures/Edit/5

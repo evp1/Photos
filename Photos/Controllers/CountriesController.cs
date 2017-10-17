@@ -13,15 +13,9 @@ namespace Photo.Controllers
         private CountriesContext db = new CountriesContext();
 
         // GET: Countries
-        public ActionResult _IndexTable()
-        {
-            return PartialView(db.Countries.OrderBy(x => x.Country));
-        }
+        public ActionResult _IndexTable() => PartialView( db.Countries.OrderBy( x => x.Country ) );
 
-        public ActionResult _LayoutCountries()
-        {
-            return View();
-        }
+        public ActionResult _LayoutCountries() => View();
 
         // GET: Countries/Details/5
         public async Task<ActionResult> _Details(int? id)
@@ -50,7 +44,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> _Create([Bind(Include = "CountryId,Country,DateCreated")] Countries countries)
+        public async Task<ActionResult> _Create([Bind(Include = "CountryId,Country")] Countries countries)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +75,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> _Edit([Bind(Include = "CountryId,Country,DateCreated")] Countries countries)
+        public async Task<ActionResult> _Edit([Bind(Include = "CountryId,Country")] Countries countries)
         {
             if (ModelState.IsValid)
             {

@@ -7,17 +7,17 @@
 
 </head>
 
-    <div style="margin-left:10px">
+<div style="margin-left:10px">
+    <div class="row">
+        <h2 class="page-header text-center">Countries</h2>
+    </div>
+    <div class="container">
         <div class="row">
-            <h2 class="page-header text-center">Countries</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-sm-14">
-                    <div class="row">
-                        <div class="panel panel-default" style="height:  360px">
-                            <div class="panel-heading">
-                                @Ajax.ActionLink("Create New", "_Create", "Countries",
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="panel panel-default" style="height:  360px">
+                        <div class="panel-heading">
+                            @Ajax.ActionLink("Create New", "_Create", "Countries",
                                 new AjaxOptions
                                 {
                                     UpdateTargetId = "PlaceHolderEdit",
@@ -26,22 +26,22 @@
                                 new { @class = "btn btn-primary" }
                                 )
 
-                            </div>
-                            <div id="PlaceHolderIndexTable" class="panel-body">
-                                @Html.Action("_IndexTable", "Countries")
-                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="panel panel-default" style="height:  400px">
-                            <div id="editPanalHeader" class="panel-heading text-center">
-                            </div>
-                            <div id="PlaceHolderEdit" class="panel-body"></div>
+                        <div id="PlaceHolderIndexTable" class="panel-body">
+                            @Html.Action("_IndexTable", "Countries")
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="panel panel-default" style="height:  400px">
+                        <div id="editPanalHeader" class="panel-heading text-center">
+                        </div>
+                        <div id="PlaceHolderEdit" class="panel-body"></div>
+                    </div>
                 </div>
-            <div class="row col-lg-7 col-sm-14" ></div>
             </div>
         </div>
- 
+        <div class="col-sm-7"></div>
+    </div>
+</div>
+
