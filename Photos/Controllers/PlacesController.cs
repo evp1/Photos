@@ -18,6 +18,8 @@ namespace Photo.Controllers
             return PartialView( places.ToList().OrderBy(x => x.Placename));
         }
 
+        public ActionResult _LayoutCPlaces() => View();
+
         [HttpGet]
         public ActionResult GetLocations()
         {

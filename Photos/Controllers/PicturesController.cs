@@ -11,16 +11,13 @@ namespace Photo.Controllers
         private PicturesContext db = new PicturesContext();
 
         // GET: Pictures
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> _IndexTable()
         {
             var pictures = db.Pictures.Include(p => p.Places);
-            return View(await pictures.ToListAsync());
+            return PartialView( await pictures.ToListAsync());
         }
 
-        public ActionResult _LayoutPictures()
-        {
-            return View();
-        }
+        public ActionResult _LayoutPictures() => View();
 
         // GET: Pictures/Details/5
         public async Task<ActionResult> Details(int? id)
@@ -34,14 +31,16 @@ namespace Photo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pictures);
+            return PartialView( pictures);
         }
 
         // GET: Pictures/Create
         public ActionResult _Create()
         {
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename");
+            ViewBag.FolderId = new SelectList( db.Folders, "FolderId", "FolderName" );
             return PartialView();
+
         }
 
         // POST: Pictures/Create
@@ -49,7 +48,7 @@ namespace Photo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> _Create([Bind(Include = "PictureId,PhotoDescription,DateTaken,DateCreated,PlaceId")] Pictures pictures)
+        public async Task<ActionResult> _Create([Bind(Include = "PictureId,PhotoDescription,DateTaken,DateCreated,PlaceId,FolderId" )] Pictures pictures)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +57,7 @@ namespace Photo.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.FolderId = new SelectList( db.Folders, "FolderId", "FolderName", pictures.FolderId );
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename", pictures.PlaceId);
             return PartialView(pictures);
         }
@@ -74,8 +74,9 @@ namespace Photo.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.FolderId = new SelectList( db.Folders, "FolderId", "FolderName", pictures.FolderId );
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename", pictures.PlaceId);
-            return View(pictures);
+            return PartialView( pictures);
         }
 
         // POST: Pictures/Edit/5
@@ -91,6 +92,7 @@ namespace Photo.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.FolderId = new SelectList( db.Folders, "FolderId", "FolderName", pictures.FolderId );
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "Placename", pictures.PlaceId);
             return View(pictures);
         }
@@ -107,7 +109,7 @@ namespace Photo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pictures);
+            return PartialView( pictures);
         }
 
         // POST: Pictures/Delete/5

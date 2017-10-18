@@ -70,33 +70,20 @@ function PreviewImages(canSelectMultiple) {
 };
 
 function checkboxClick(control) {
-    // Caption is split in following parts:
-    // 0. "Name:"
-    // 1. Name
-    // 2. "Date:"
-    // 3. Date
-    // 4. Time
-    // 5. AM/PM
-    // Incase Name is empty a check is done to make sure "Date:" is not in the Name string.
-    // To make sure that all the DateTime pieces are there a for loop with the array length is used.
+
     try {
         var captionText = $("#imagecaption" + control.id.replace('cb', '')).text();
         captionText = $.trim(captionText);
-        var splitCaption = captionText.split(" ");
-        document.getElementById("PhotoDescription").value = "";
+        var splitCaption = captionText.split("Date:");
+        document.getElementById("FileName").value = "";
         document.getElementById("DateTaken").value = "";
+        // get the date-time
+        document.getElementById("DateTaken").value = splitCaption[1];
+        // get the filename
+        var temp = splitCaption[0];
+        var filename = temp.split("Name:");
+        document.getElementById("FileName").value = filename[1];
 
-        if (splitCaption[1] == "Date:") {
-            for (var i = 2; i < splitCaption.length; i++) {
-                document.getElementById("DateTaken").value += splitCaption[i] + " ";
-            }
-        }
-        else {
-            document.getElementById("PhotoDescription").value = splitCaption[1];
-            for (var i = 3; i < splitCaption.length; i++) {
-                document.getElementById("DateTaken").value += splitCaption[i] + " ";
-            }
-        }
     }
     catch (err) {
 

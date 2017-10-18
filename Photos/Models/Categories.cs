@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Photo.Models
 {
-    public class Categories
+    public partial class Categories
     {
         public Categories()
         {
